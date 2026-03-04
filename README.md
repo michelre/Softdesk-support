@@ -59,3 +59,31 @@ poetry run python manage.py runserver
 Le serveur est maintenant accessible sur : **http://127.0.0.1:8000/**
 
 L'interface d'administration est accessible sur : **http://127.0.0.1:8000/admin/**
+
+
+## 📡 Endpoints API disponibles
+
+### Utilisateurs
+
+| Méthode     | Endpoint         | Description |
+|-------------|------------------|-------------|
+| POST        | `/api/user/`     | Créer un utilisateur (signup) |
+| GET         | `/api/user/`     | Lister tous les utilisateurs |
+| GET         | `/api/user/{id}/` | Détails d'un utilisateur |
+| PUT / PATCH | `/api/user/{id}/` | Modifier un utilisateur |
+| DELETE      | `/api/user/{id}/` | Supprimer un utilisateur |
+
+### Exemple de requête (création d'utilisateur)
+```
+POST http://127.0.0.1:8000/api/user/
+
+{
+    "username": "alice",
+    "email": "alice@example.com",
+    "password": "SecurePass123!",
+    "password2": "SecurePass123!",
+    "date_of_birth": "2000-05-15",
+    "can_be_contacted": true,
+    "can_data_be_shared": false
+}
+```
